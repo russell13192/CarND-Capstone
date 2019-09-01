@@ -9,6 +9,7 @@ from geometry_msgs.msg import TwistStamped
 import math
 
 from twist_controller import Controller
+from styx_msgs.msg import Lane
 
 '''
 You can build this node only after you have built (or partially built) the `waypoint_updater` node.
@@ -77,6 +78,7 @@ class DBWNode(object):
         self.dbw_enabled = False
         self.current_vel = None
         self.target_vel = None
+        self.target_ang = None
         self.final_waypoints = None
         self.current_pose = None
         self.previous_stamp = rospy.get_rostime()
