@@ -1,7 +1,15 @@
 # Capstone Project
-This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
 
-Please use **one** of the two installation options, either native **or** docker installation.
+
+
+
+This repository serves as the main repository for the Udacity Self Driving car Nanodegree program capstone project for the Localizers team. 
+
+[//]: # (Image References)
+[image1]: ./imgs/carla_architecture.png
+[image2]: ./imgs/rosgraph.jpg
+[image3]: ./imgs/system_architecture.png
+[image4]: ./imgs/rosgraph.png
 
 The members of team **Localizers**:
 ## Team Members
@@ -14,6 +22,32 @@ The members of team **Localizers**:
 | Keisuke Shima                     | @Keisuke Shima        | [KeisukeShima](https://github.com/KeisukeShima)           | komaki289@gmail.com              |
 | Ashish Reddy                      | @Ashish    | [abasired](https://github.com/abasired)         | bashish.iitg@gmail.com      |
 
+
+The test vehicle for this project is the Udacity Self Driving car Carla. The cars modules and systems are displayed in the image below
+
+![][image1]
+
+Carla is broken into 3 main modules, Perception, Planning and Control which are all implemented via ROS. The architecture of the ROS stack is displayed below. 
+
+![][image4]
+
+
+The ROS modules are divided as follows :
+ - `tl_detector` uses the camera to detect the traffic lights' color
+ - `twist_controller` handles the control of the car
+ - `waypoint_follower` makes sure the car follow the trajectory
+ - `waypoint_loader` loads the route the car is going to follow
+ - `waypoint_updater` adapts the car's route to the situation (eg. traffic light)
+
+## Notes 
+
+We ended up using tensorflow version 1.14.0 after some research online as to what the best version to use would be. We also made our runtime more stable by installing pyyaml(5.1.2) to proactive load the correct model based upon which launch file is used.
+
+### (Original Udacity README)
+
+Please use **one** of the two installation options, either native **or** docker installation.
+
+This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
 
 ### Native Installation
 
